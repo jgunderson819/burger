@@ -1,18 +1,28 @@
-// Initializes Node.js packages
-const bodyParser = require("body-parser");
-const express = require("express");
-const exphbs = require("express-handlebars");
+// initializes Node.js packages
+var bodyParser = require("body-parser");
+var express = require("express");
+var exphbs = require("express-handlebars");
 
-//  Initialize express.js and define port
-const app = express();
-const PORT = process.env.PORT || 3000
+// initializes Express.js server and defines port
+var app = express();
+var PORT = process.env.PORT || 3000;
 
-// set up the express app to handle data parsing
+// sets up data parsing
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
 
-app.use(express.urlencoded({ extended: true}));
-app.use(express.json);
+// sets up Handlebars.js
+app.engine("handlebars", exphbs({ defaultLayout: "main" }));
+app.set("view engine", "handlebars");
 
-// set up handlebars.js
+// imports routes
+var routes = require("./controllers/burgersController.js");
+app.use(routes);
 
-app.engine("handlebars", exphbs9({ defaultLayout: "main"}));
-app.set("view engine", "handlebars")
+// loads static files
+app.use(express.static("./public"));
+
+// starts Express.js server
+app.listen(PORT, function() {
+	console.log("This app is listening on PORT: " + PORT + ".");
+});
