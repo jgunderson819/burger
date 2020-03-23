@@ -2,9 +2,10 @@
   "name": "y",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
-    "test": "y"
+    "test": "y",
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",

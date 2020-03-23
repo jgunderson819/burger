@@ -1,28 +1,28 @@
-// initializes Node.js packages
-var bodyParser = require("body-parser");
-var express = require("express");
-var exphbs = require("express-handlebars");
+// Pull in required dependencies
+var express = require('express');
+var bodyParser = require('body-parser');
 
-// initializes Express.js server and defines port
-var app = express();
+
 var PORT = process.env.PORT || 3000;
 
-// sets up data parsing
-app.use(express.urlencoded({ extended: true }));
-app.use(express.json());
+var app = express();
 
-// sets up Handlebars.js
-app.engine("handlebars", exphbs({ defaultLayout: "main" }));
-app.set("view engine", "handlebars");
+// Serve static content for the app from the 'public' directory
+app.use(express.static(process.cwd() + '/public'));
 
-// imports routes
-var routes = require("./controllers/burgersController.js");
-app.use(routes);
+app.use(bodyParser.urlencoded({ extended: false }));
 
-// loads static files
-app.use(express.static("./public"));
 
-// starts Express.js server
-app.listen(PORT, function() {
-	console.log("This app is listening on PORT: " + PORT + ".");
-});
+
+// Set Handlebars as the view engine
+var exphbs = require('express-handlebars');
+
+app.engine('handlebars', exphbs({ defaultLayout: 'main' }));
+app.set('view engine', 'handlebars');
+
+// Import routes and give the server access to them
+var routes = require('./controllers/burgers_controller.js');
+
+app.use('/', routes);
+
+app.listen(PORT);
