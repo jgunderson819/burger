@@ -1,26 +1,26 @@
 {
-    "development": {
-      "username": "jmedfgpajms7gubq",
-      "password": "l7ciu2jk7hxs62cf",
-      "database": "ovcido4tkt2g9i85",
-      "host": "127.0.0.1",
-      "port": 3306,
-      "dialect": "mysql"
-    },
-    "test": {
-      "username": "jmedfgpajms7gubq",
-      "password": "l7ciu2jk7hxs62cf",
-      "database": "ovcido4tkt2g9i85",
-      "host": "127.0.0.1",
-      "port": 3306,
-      "dialect": "mysql"
-    },
-    "production": {
-      "username": "jmedfgpajms7gubq",
-      "password": "l7ciu2jk7hxs62cf",
-      "database": "ovcido4tkt2g9i85",
-      "host": "127.0.0.1",
-      "port": 3306,
-      "dialect": "mysql"
-    }
+  "development": {
+    "username": "root",
+    "password": null,
+    "database": "Burger Heroku",
+    "host": "127.0.0.1",
+    "port": 3306,
+    "dialect": "mysql"
+  },
+  "test": {
+    "username": "jmedfgpajms7gubq",
+    "password": "l7ciu2jk7hxs62cf",
+    "database": "ovcido4tkt2g9i85",
+    "host": "127.0.0.1",
+    "port": 3306,
+    "dialect": "mysql"
+  },
+  "production": {
+    "username": "jmedfgpajms7gubq",
+    "password": "l7ciu2jk7hxs62cf",
+    "database": "ovcido4tkt2g9i85",
+    "host": "127.0.0.1",
+    "port": 3306,
+    "dialect": "mysql"
   }
+}
